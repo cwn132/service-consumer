@@ -2,6 +2,9 @@ package com.spingcloud.serviceconsumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class ServiceConsumerApplication {
@@ -10,4 +13,11 @@ public class ServiceConsumerApplication {
         SpringApplication.run(ServiceConsumerApplication.class, args);
     }
 
+
+    //当添加@LoadBalanced注解，就代表启动Ribbon,进行负载均衡
+    @LoadBalanced
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
