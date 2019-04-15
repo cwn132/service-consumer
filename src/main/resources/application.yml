@@ -12,3 +12,19 @@ eureka:
 spring:
   application:
     name: order-service
+
+#\u5F15\u5165swagger
+swagger:
+  enable: true
+
+
+#\u5F00\u542Ffeign\u652F\u6301hystrix  (\u6CE8\u610F\uFF0C\u4E00\u5B9A\u8981\u5F00\u542F\uFF0C\u65E7\u7248\u672C\u9ED8\u8BA4\u652F\u6301\uFF0C\u65B0\u7248\u672C\u9ED8\u8BA4\u5173\u95ED)
+# #\u4FEE\u6539\u8C03\u7528\u8D85\u65F6\u65F6\u95F4\uFF08\u9ED8\u8BA4\u662F1\u79D2\u5C31\u7B97\u8D85\u65F6\uFF09
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
