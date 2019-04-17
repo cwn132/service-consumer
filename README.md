@@ -9,3 +9,5 @@ http://localhost:9001/api/v1/order/save?user_id=1&product_id=1
 http://localhost:9001/api/v1/order/saveorder?user_id=1&product_id=1
 
 3.整合Hystrix熔断
+
+4.添加AOP日志
